@@ -4,11 +4,11 @@
 }
 
 :root{
-    --white: #fff;
-    --dark1: #070915;
-    --dark2: #1a1a1a;
-    --dark3: #566981;
-    --dark4: #2f2f46;
+    --white: #ffffff;
+    --dark1: #000000;
+    --dark2: #0e0d0d;
+    --dark3: #808080;
+    --dark4: #c7c7c7;
     --yellow1: #F6C90E;
     --yellow2: #ffcc00;
     --yellow3: #e6b800;
@@ -18,6 +18,7 @@
 body{
     background-color: var(--dark2);
     height: 100vh;
+    font-size: large;
 }
 
 header{
@@ -68,10 +69,172 @@ button{
     font-size: .9rem;
     border-radius: 8px;
     cursor: pointer;
+    transition: .4s;
 }
 
 .btn-action{
     border: 1px solid var(--white);
     background-color: transparent;
     color: var(--white);
+}
+
+.btn-action:hover{
+    background-color: var(--dark2);
+    border: 1px solid var(--dark2);
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section{
+    padding: 4rem;
+}
+
+.first-section{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 650px;
+}
+
+.first-section > div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 300px;
+}
+
+h1{
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.first-section > p{
+    color: var(--white);
+    text-align: center;
+}
+.first-section > div > p{
+    color: var(--white);
+    font-size: 1.3rem;
+    text-align: center;
+}
+.first-section > div > p > strong{
+    font-size: 1.5rem;
+    color: var(--dark4);
+}
+.box-img-main{
+    max-width: 450px;
+    padding: 1rem;
+
+}
+
+.main-img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.second-section{
+    background-color: var(--dark2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--white);
+    
+}
+
+.title{
+    color: var(--dark4);
+    font-size: 4rem;
+}
+
+.third-section{
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.videos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+
+.fourth-section{
+    background-color: var(--dark2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--white); 
+}
+
+.fifth-section{
+    background-color: var(--dark2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--white); 
+}
+
+.sixth-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--white); 
+}
+
+.buy-button{
+    
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2px;
+}
+.buy{
+    transition: .4s;
+    color: var(--white);
+    background-color: var(--dark2);
+    border: 2px solid var(--yellow4)
+}
+
+.buy:hover{
+    background-color: var(--dark2);
+    border: 3px solid var(--yellow1);
+    cursor: pointer;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: var(--white); 
 }
