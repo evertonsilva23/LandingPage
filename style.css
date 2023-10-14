@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -18,12 +20,13 @@
 body{
     background-color: var(--dark2);
     height: 100vh;
-    font-size: large;
+    font-size: 1.1rem;
 }
 
 header{
+    position: sticky;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
@@ -41,22 +44,30 @@ header{
     height: 100%;
 }
 
-nav{
+.main-menu{
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
     flex-wrap: wrap;
 }
 
+.main-menu ul{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 .nav-links{
     text-decoration: none;
-    color: var(--white)
+    color: var(--white);
+    padding: 0.7rem;
 }
 .nav-links:hover{
+    background-color: var(--dark2);
     color: var(--yellow4);
     transition: .4s;
-    text-decoration: underline;
 }
 
 .box-btn-actions{
@@ -89,6 +100,20 @@ main{
     gap: 2rem;
 }
 
+.back-top {
+    display: flex;
+    position: fixed;
+    right: 0;
+    bottom: 0%;
+}
+
+.img-top {
+    max-width:4rem;
+    max-height:4rem;
+    width: auto;
+    height: auto;
+}
+
 section{
     padding: 4rem;
 }
@@ -110,8 +135,13 @@ section{
 }
 
 h1{
+    text-shadow: .1rem .1rem .2rem var(--yellow4);
     font-size: 4rem;
     color: var(--white);
+    text-align: center;
+}
+p{
+    text-align: justify;
 }
 
 .first-section > p{
@@ -151,8 +181,10 @@ h1{
 }
 
 .title{
+    text-shadow: .1rem .1rem .2rem var(--yellow4);
     color: var(--dark4);
     font-size: 4rem;
+    text-align: center;
 }
 
 .third-section{
@@ -180,17 +212,6 @@ h1{
     gap: 2rem;
 }
 
-
-.fourth-section{
-    background-color: var(--dark2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    color: var(--white); 
-}
-
 .fifth-section{
     background-color: var(--dark2);
     display: flex;
@@ -214,23 +235,45 @@ h1{
     
     display: flex;
     justify-content: center;
-    gap: 2rem;
     padding: 2px;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 1rem;
 }
+
+.buy-button div{
+    
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 1.4rem;
+    background-color: var(--dark2);
+    text-shadow: .1rem .1rem .2rem var(--yellow4);
+
+}
+
 .buy{
     transition: .4s;
     color: var(--white);
+    font-size: large;
     background-color: var(--dark2);
-    border: 2px solid var(--yellow4)
+    border: 2px solid var(--dark3);
+    width: 300px;
+    height: 70px;
 }
 
 .buy:hover{
     background-color: var(--dark2);
-    border: 3px solid var(--yellow1);
+    border: 2px solid var(--yellow1);
     cursor: pointer;
+    text-shadow: .1rem .1rem .2rem var(--yellow4);
+    box-shadow: 0rem 0rem 3rem .7rem var(--yellow4);
 }
 
-.price{
+.price {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -238,3 +281,123 @@ h1{
     gap: 2rem;
     color: var(--white); 
 }
+
+footer{
+    display: grid;
+    row-gap: 1.5rem;
+    padding: 4rem;
+    text-align: center;
+}
+
+footer > div{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--yellow4);
+}
+
+footer > div a:visited{
+    color: var(--yellow4);
+}
+
+#btn-mobile{
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 3rem;
+    }
+    #menu{
+        display: block;
+        /* display: block; */
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        right: 0px;
+        background-color: var(--dark1);
+        transition: .4s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;    
+    }
+
+    nav.active #menu {
+        height: calc(100vh - 90px);
+        display: block;
+        visibility: visible;
+        overflow-y: auto;
+    }
+    .main-menu{
+        display: flex;
+        flex-direction: row-reverse;
+        gap: .7rem;
+    }
+
+    .nav-links {
+        display: flex;
+        padding: .07rem 0;
+        margin: 0 1rem;
+        border-bottom: 1px solid var(--white);
+    }
+
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--white);
+        background-color: var(--dark1);
+        cursor: pointer;
+        gap: .5rem;
+        color: var(--white);
+    }
+
+    #btn-mobile:hover{
+        background-color: var(--dark2);
+        border: 1px solid var(--dark2);
+    }
+    
+
+    #hamburger{
+
+        display: block;
+        width: 20px;
+        border-top: 2px solid;
+    }
+
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    .img-top {
+        max-width:2.5rem;
+        max-height:2.5rem;
+        width: auto;
+        height: auto;
+    }
+    
+
+}
+
